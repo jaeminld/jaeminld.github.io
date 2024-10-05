@@ -24,6 +24,10 @@ body {
   margin: 0;
 }
 
+<head>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+
 /**
  * Add the correct display in IE 9-.
  */
@@ -434,6 +438,46 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+/* Menu bar */
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu li {
+  margin-right: 1rem;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+}
+
+
+.cover-author-image {
+  width: 100%; /* Ensure container spans full width */
+  height: auto; /* Maintain aspect ratio */
+  overflow: hidden; /* Hide overflow if necessary */
+}
+
+.cover-author-image img {
+  width: 100%; /* Make image fill the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Fit the image within its container */
+  border-radius: 50%; /* Optional: make the image circular */
 }
 
 .highlight {

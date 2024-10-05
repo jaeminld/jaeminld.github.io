@@ -8,9 +8,9 @@ permalink: ':title/'
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: #if your site has a twitter account, enter it here
 
-# Author Settings
+# Author Settings 
 author: Jaemin Choi # add your name
-author-img: Jaemin.jpg # add your photo
+author-img: Capybara.jpeg # add your photo
 about-author: Signal and Processing, AI paper review and implmentation. # add description
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
@@ -23,6 +23,18 @@ discus-identifier: mr-brown # add your discus identifier
 
 # Tracker
 analytics: # Google Analytics
+
+# Menu bar
+menu:
+  - name: Home
+    link: /
+  - name: Blog
+    link: /blog/
+  - name: About
+    link: /about/
+  - name: Contact
+    link: /contact/
+
 
 # Build Settings
 markdown: kramdown

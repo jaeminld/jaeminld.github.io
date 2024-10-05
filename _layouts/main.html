@@ -2,11 +2,21 @@
 layout: default
 ---
 
+<header class="navbar">
+  <nav>
+    <ul class="menu">
+      {% for item in site.menu %}
+        <li><a href="{{ site.baseurl }}{{ item.link }}">{{ item.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
+
 <aside class="sidebar">
   <header>
     <div class="about">
       <div class="cover-author-image">
-        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}" width = "64"></a>
+        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}" height="100%" object-fit="cover"></a>
       </div>
       <div class="author-name">{{site.author}}</div>
       <p>{{site.about-author}}</p>
