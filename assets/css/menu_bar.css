@@ -26,3 +26,11 @@ font-weight: bold;
 .menu-bar a:hover {
 background-color: #555; /* Background color on hover */
 }
+
+
+.content-wrapper {
+margin-left: 250px; /* Space to the right of the sidebar */
+width: calc(100% - 250px); /* Full width minus sidebar */
+padding: 0px; /* Add padding for some spacing */
+box-sizing: border-box;
+}

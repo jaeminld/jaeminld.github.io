@@ -14,6 +14,7 @@ author-img: Capybara.jpeg # add your photo
 about-author: Signal and Processing, AI paper review and implmentation. # add description
 social-github: jaeminld # add your Github handle
 social-linkedin: # add your Linkedin handle
+social-email: jaeminld@naver.com
 
 # Disqus
 discus-identifier: mr-brown # add your discus identifier
@@ -25,14 +26,16 @@ analytics: # Google Analytics
 nav:
   - name: "Home"
     url: "/"
-  - name: "Home"
-    url: "/"
   - name: "Category"
-    url: "/Category/"
+    url: "/category/"
   - name: "About"
-    url: "/About/"
+    url: "/about/"
 
-
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  
 # Build Settings
 markdown: kramdown
 plugins:
