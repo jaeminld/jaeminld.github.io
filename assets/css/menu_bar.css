@@ -1,0 +1,28 @@
+/* Menu bar */
+.menu-bar {
+    background-color: #333; /* Background color */
+    padding: 10px 20px;
+    max-width: 1200px; /* Set a maximum width */
+    margin: 0 auto; /* Center the menu bar */
+    width: 100%; /* Ensure it spans the full width of the container */
+    box-sizing: border-box; /* Make sure padding doesn't increase total width */
+}
+.menu-bar ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: space-around; /* Align items horizontally */
+}
+.menu-bar li {
+display: inline;
+}
+.menu-bar a {
+color: #fff; /* Text color */
+text-decoration: none;
+padding: 8px 16px;
+font-weight: bold;
+}
+.menu-bar a:hover {
+background-color: #555; /* Background color on hover */
+}

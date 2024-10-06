@@ -2,16 +2,6 @@
 layout: default
 ---
 
-<header class="navbar">
-  <nav>
-    <ul class="menu">
-      {% for item in site.menu %}
-        <li><a href="{{ site.baseurl }}{{ item.link }}">{{ item.name }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
-</header>
-
 <aside class="sidebar">
   <header>
     <div class="about">
@@ -58,6 +48,16 @@ layout: default
     </div>
   </footer> <!-- End Footer -->
 </aside> <!-- End Sidebar -->
+
+ <!-- Menu Bar -->
+ <nav class="menu-bar">
+  <ul>
+    {% for item in site.nav %}
+      <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.name }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+
 <div class="content-box clearfix">
   {{ content }}
 </div>
