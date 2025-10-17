@@ -2,6 +2,26 @@
 	<meta charset="utf-8">
 	<title>{% if page.title %}{{page.title}} - {{site.title}}{% else %}{{site.title}}{% endif %}</title>
 
+  <script>
+    MathJax = {
+      loader: { load: ['[tex]/color', '[tex]/ams'] },   // color + ams 로드
+      tex: {
+        packages: { '[+]': ['color', 'ams'] },          // color, ams 활성화
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        tags: 'ams',           // 자동 넘버링
+        tagSide: 'right',      // 번호를 오른쪽에
+        tagIndent: '0.8em'     // 본문과 간격
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+
   <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
 
     <meta content="{{ site.title }}" property="og:site_name">
@@ -86,4 +106,5 @@
 	<!-- Styles -->
 	<link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ "/assets/css/menu_bar.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 </head>

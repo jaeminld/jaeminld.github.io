@@ -1,0 +1,16 @@
+---
+layout: post
+title: "PyTorch-Torch Manipulation"
+slug: pytorch-torch-manipulation
+date: 2025-10-09 13:32:20 +0300
+description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
+# img: i-rest.jpg # Add image post (optional)
+fig-caption: # Add figcaption (optional)
+# categories: [swift, camera]
+tags: [PyTorch, stack, cat, ]
+published: False
+---
+
+PyTorch Manipulation
+
+Deep learning 논문을 보고, 해당 코드 구현을 보면 torch.stack(), torch.cat(), .. 등등 여러 함수를 이용해서 torch의 shape를 변경하고, torch끼리 concat하고 하는데, 내 생각엔 너무 복잡해서 한 번 정리해보려고 한다. 

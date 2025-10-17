@@ -1,4 +1,4 @@
-title: Jaemin Choi's blog
+title: Jaemin's blog
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
@@ -9,9 +9,9 @@ baseurl: ""
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author Settings 
-author: Jaemin Choi # add your name
+author: Jaemin # add your name
 author-img: Capybara.jpeg # add your photo
-about-author: Signal and Processing, AI paper review and implmentation. # add description
+about-author: AI paper review and implmentation. # add description
 social-github: jaeminld # add your Github handle
 social-linkedin: # add your Linkedin handle
 social-email: jaeminld@naver.com
@@ -38,12 +38,15 @@ collections:
   
 # Build Settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jemoji
 
-paginate: 8
-paginate_path: "/page/:num"
+paginate: 5                 # 한 페이지에 5개
+paginate_path: "/page:num"  # /page2, /page3 ...
 
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
