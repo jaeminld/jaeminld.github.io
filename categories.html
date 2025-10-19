@@ -1,0 +1,103 @@
+---
+layout: main
+title: Categories
+permalink: /categories/
+---
+
+<article class="page--categories">
+  <div class="content-wrapper">
+    <h2 class="page-title">Browse by Category</h2>
+
+    <!-- 칩 툴바 (좌측 정렬) -->
+    <nav id="cat-toolbar" class="cat-tabs" aria-label="Categories">
+        <button class="cat-tab active" data-cat="__all">All</button>
+        {% for c in site.categories %}
+            {% assign cat_name = c[0] %}
+            <button class="cat-tab" data-cat="{{ cat_name | escape }}">{{ cat_name }}</button>
+        {% endfor %}
+        <span class="cat-ink"></span>
+    </nav>
+
+
+    <section id="post-list">
+      {% for post in site.posts %}
+        {% include post-card.html post=post %}
+      {% endfor %}
+    </section>
+  </div>
+</article>
+
+<script>
+  (function(){
+    const qs = new URLSearchParams(location.search);
+    const pre = qs.get('cat');
+
+    const chips = Array.from(document.querySelectorAll('.cat-chip'));
+    const cards = Array.from(document.querySelectorAll('#post-list .post')); // ← 클래스 'post'로 필터
+
+    function setActive(cat){
+      chips.forEach(b => b.classList.toggle('active', b.dataset.cat === cat || (cat==='__all' && b.dataset.cat==='__all')));
+      cards.forEach(card => {
+        if(cat==='__all'){ card.style.display=''; return; }
+        const cats = (card.dataset.cats || '').split('|').map(s=>s.trim());
+        card.style.display = cats.includes(cat) ? '' : 'none';
+      });
+      const url = new URL(location);
+      if(cat==='__all') url.searchParams.delete('cat'); else url.searchParams.set('cat', cat);
+      history.replaceState(null, '', url);
+    }
+
+    document.getElementById('cat-toolbar').addEventListener('click', (e)=>{
+      const btn = e.target.closest('.cat-chip'); if(!btn) return;
+      setActive(btn.dataset.cat);
+    });
+
+    if(pre && chips.some(b=>b.dataset.cat===pre)) setActive(pre); else setActive('__all');
+  })();
+</script>
+
+
+<script>
+(function(){
+  const qs = new URLSearchParams(location.search);
+  const pre = qs.get('cat');
+  const tabs = [...document.querySelectorAll('.cat-tab')];
+  const cards = [...document.querySelectorAll('#post-list .post')];
+  const ink = document.querySelector('.cat-ink');
+
+  function moveInk(el){
+    if(!ink || !el) return;
+    const p = el.parentElement.getBoundingClientRect();
+    const r = el.getBoundingClientRect();
+    ink.style.left = (r.left - p.left) + 'px';
+    ink.style.width = r.width + 'px';
+  }
+
+  function setActive(cat){
+    tabs.forEach(b => b.classList.toggle('active', b.dataset.cat === cat || (cat==='__all' && b.dataset.cat==='__all')));
+    cards.forEach(card => {
+      if(cat==='__all'){ card.style.display=''; return; }
+      const cats = (card.dataset.cats || '').split('|').map(s=>s.trim());
+      card.style.display = cats.includes(cat) ? '' : 'none';
+    });
+    const url = new URL(location);
+    if(cat==='__all') url.searchParams.delete('cat'); else url.searchParams.set('cat', cat);
+    history.replaceState(null, '', url);
+
+    // ink
+    const current = tabs.find(t => t.classList.contains('active'));
+    moveInk(current);
+  }
+
+  document.getElementById('cat-toolbar').addEventListener('click', e=>{
+    const btn = e.target.closest('.cat-tab'); if(!btn) return;
+    setActive(btn.dataset.cat);
+  });
+
+  // 초기
+  const initial = (pre && tabs.find(t=>t.dataset.cat===pre)) ? pre : '__all';
+  setActive(initial);
+  // 리사이즈시 ink 재계산
+  window.addEventListener('resize', ()=>moveInk(tabs.find(t=>t.classList.contains('active'))));
+})();
+</script>

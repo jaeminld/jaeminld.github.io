@@ -905,9 +905,31 @@ table tfoot td {
   position: relative;
 }
 
-.post, .article-page {
+.post {
   background-color: #fff;
 }
+
+/* 포스트 상세 페이지에서만 중앙 정렬 */
+.content-box.is-post {
+  justify-content: center;      /* 가로 중앙 */
+}
+
+/* 포스트 아티클 자체의 폭을 지정하고 가운데 배치 */
+.content-box.is-post > .article-page {
+  max-width: 1100px;         
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* 반응형 보완 */
+@media (max-width: 768px) {
+  .content-box.is-post > .article-page {
+    max-width: 100%;
+    padding: 1.25rem;
+  }
+}
+
 
 ::-moz-selection {
   background: rgba(38, 57, 89, 0.8);
@@ -1497,3 +1519,34 @@ a.newer-posts:hover {
     font-size: 21px;
   }
 }
+
+:root{
+  --cat-fg:#263959;        /* 탭 글자색 */
+  --cat-muted:#9aa6b2;     /* 비활성 */
+  --cat-ink:#263959;       /* 밑줄 색 */
+  --cat-bg:transparent;
+}
+.cat-tabs{
+  position:relative;
+  display:flex; flex-wrap:wrap; gap:14px;
+  align-items:center;
+  border-bottom:1px solid #e5e7eb;
+  padding:0 2px 8px 2px;
+}
+.cat-tab{
+  position:relative;
+  appearance:none; background:var(--cat-bg); border:0;
+  color:var(--cat-muted);
+  font:600 14px/1.2 'Lato',sans-serif;
+  padding:8px 4px; cursor:pointer;
+  transition:color .18s ease;
+}
+.cat-tab:hover{ color:#415a79; }
+.cat-tab.active{ color:var(--cat-fg); }
+.cat-ink{
+  position:absolute; left:0; bottom:-1px; height:2px; width:0;
+  background:var(--cat-ink); border-radius:2px;
+  transition:left .22s cubic-bezier(.2,.8,.2,1), width .22s cubic-bezier(.2,.8,.2,1);
+}
+/* 접근성: 키보드 포커스 */
+.cat-tab:focus-visible{ outline:2px solid #a9c4d1; outline-offset:2px; }

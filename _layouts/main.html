@@ -8,8 +8,6 @@ layout: default
   /* ★ 테마의 레이아웃을 건드리지 않기 위해
      .content-wrapper / .content-box / .menu-bar / .sidebar(전체) 에 대한 스타일은 제거합니다.
      아래는 .sidebar 내부에 국한된 스타일만 정의합니다. */
-
-  /* 프로필 */
   .sidebar .about { text-align: center; }
   .sidebar .cover-author-image img {
     width: 108px;
@@ -122,7 +120,7 @@ layout: default
 </aside> <!-- End Sidebar -->
 
 <!-- Menu Bar -->
-<div class="content-wrapper">
+<div class="menu-wrapper">
   <nav class="menu-bar">
     <ul>
       {% for item in site.nav %}
@@ -133,7 +131,7 @@ layout: default
 </div>
 
 <!-- Main content -->
-<div class="content-box clearfix">
+<div class="content-box clearfix {% if page.layout == 'post' %}is-post{% endif %}">
   {{ content }}
 </div>
 
@@ -141,13 +139,6 @@ layout: default
 <!-- 총 방문자/조회수: Busuanzi -->
 <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-<!-- 오늘 방문자: Simple Analytics
-     1) https://simpleanalytics.com 에 사이트(jaeminld.github.io) 등록
-     2) 대시보드를 Public 상태로 설정
-     3) (선택) <head>에 추적 스크립트 추가:
-        <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-        <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
--->
 <script>
 (async function(){
   const el = document.getElementById("today_visitors");

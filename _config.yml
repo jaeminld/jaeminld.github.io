@@ -27,7 +27,7 @@ nav:
   - name: "Home"
     url: "/"
   - name: "Category"
-    url: "/category/"
+    url: "/categories/"
   - name: "About"
     url: "/about/"
 
