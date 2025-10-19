@@ -2,44 +2,107 @@
 layout: default
 ---
 
+<!-- ===== 스타일: 중앙 정렬 + 카드형 통계(세로 스택) ===== -->
+<!-- ===== 스타일: 사이드바 내부 요소만 스코프 ===== -->
+<style>
+  /* ★ 테마의 레이아웃을 건드리지 않기 위해
+     .content-wrapper / .content-box / .menu-bar / .sidebar(전체) 에 대한 스타일은 제거합니다.
+     아래는 .sidebar 내부에 국한된 스타일만 정의합니다. */
+
+  /* 프로필 */
+  .sidebar .about { text-align: center; }
+  .sidebar .cover-author-image img {
+    width: 108px;
+    height: 108px;
+    border-radius: 9999px;
+    object-fit: cover;
+    box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  }
+  .sidebar .author-name {
+    margin-top: 8px;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+  .sidebar .about p { 
+    margin: 6px 0 0 0; 
+    opacity: .8; 
+    line-height: 1.5;
+  }
+
+  /* ===== 통계 박스(세로 스택) - 사이드바 내부 전용 ===== */
+  .sidebar .site-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    margin-top: 8px;
+  }
+  .sidebar .stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.03);
+    background: #fff;
+    min-height: 42px;
+  }
+  .sidebar .stat .label {
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+  .sidebar .stat .value {
+    font-weight: 700;
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* 푸터 아이콘/카피 정렬(사이드바 내부 전용) */
+  .sidebar .contact ul{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    list-style:none; 
+    padding:0; 
+    margin:8px 0 0 0;
+  }
+  .sidebar .copyright { 
+    text-align:center; 
+    margin-top:10px; 
+    opacity:.7;
+  }
+</style>
+
+
 <aside class="sidebar">
   <header>
     <div class="about">
       <div class="cover-author-image">
-        <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}" height="100%" object-fit="cover"></a>
+        <a href="{{site.baseurl}}/">
+          <img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}">
+        </a>
       </div>
       <div class="author-name">{{site.author}}</div>
       <p>{{site.about-author}}</p>
     </div>
 
-    <!-- <div class="metrics-card" aria-label="site analytics">
-      <div class="metric">
-        <span class="metric-icon">👤</span>
-        <span class="metric-label">Visitors</span>
-        <span id="busuanzi_container_site_uv">
-          <span class="metric-value" id="busuanzi_value_site_uv">—</span>
-        </span>
+    <div class="site-stats">
+      <div class="stat">
+        <span class="label">총 방문자</span>
+        <span class="value" id="busuanzi_value_site_uv">–</span>
       </div>
-      <div class="metric">
-        <span class="metric-icon">👀</span>
-        <span class="metric-label">Visits</span>
-        <span id="busuanzi_container_site_pv">
-          <span class="metric-value" id="busuanzi_value_site_pv">—</span>
-        </span>
+      <div class="stat">
+        <span class="label">오늘 방문자</span>
+        <span class="value" id="today_visitors">–</span>
       </div>
-      <div class="metric">
-        <span class="metric-icon">📄</span>
-        <span class="metric-label">This page</span>
-        <span id="busuanzi_container_page_pv">
-          <span class="metric-value" id="busuanzi_value_page_pv">—</span>
-        </span>
-      </div>
-    </div> -->
+    </div>
     
-  </header> <!-- End Header --> 
+  </header>
+
   <footer>
     <section class="contact">
-      <h3 class="contact-title">Contact me</h3>
+      <h3 class="contact-title" style="text-align:center;margin:10px 0 2px 0;">Contact me</h3>
       <ul>
         {% if site.social-github %}
           <li class="github"><a href="http://github.com/{{site.social-github}}" target="_blank"><i class="fa fa-github"></i></a></li>
@@ -58,9 +121,8 @@ layout: default
   </footer> <!-- End Footer -->
 </aside> <!-- End Sidebar -->
 
- <!-- Menu Bar -->
- <div class="content-wrapper">
-  <!-- Menu Bar -->
+<!-- Menu Bar -->
+<div class="content-wrapper">
   <nav class="menu-bar">
     <ul>
       {% for item in site.nav %}
@@ -69,7 +131,38 @@ layout: default
     </ul>
   </nav>
 </div>
-  <!-- Main content goes here -->
-  <div class="content-box clearfix">
-    {{ content }}
-  </div>
+
+<!-- Main content -->
+<div class="content-box clearfix">
+  {{ content }}
+</div>
+
+<!-- ===== 스크립트: Busuanzi(총합) + Simple Analytics(오늘) ===== -->
+<!-- 총 방문자/조회수: Busuanzi -->
+<script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- 오늘 방문자: Simple Analytics
+     1) https://simpleanalytics.com 에 사이트(jaeminld.github.io) 등록
+     2) 대시보드를 Public 상태로 설정
+     3) (선택) <head>에 추적 스크립트 추가:
+        <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+-->
+<script>
+(async function(){
+  const el = document.getElementById("today_visitors");
+  if(!el) return;
+  try {
+    // 도메인 맞게: jaeminld.github.io
+    const endpoint = "https://simpleanalytics.com/jaeminld.github.io.json?version=5&fields=visitors&start=today&end=today&timezone=Asia/Seoul";
+    const res = await fetch(endpoint, { credentials: "omit", cache: "no-store" });
+    if(!res.ok) throw new Error("Simple Analytics API error: " + res.status);
+    const data = await res.json();
+    const today = (data && (data.visitors ?? data.pageviews ?? 0)) || 0;
+    el.textContent = today;
+  } catch (e) {
+    console.warn(e);
+    el.textContent = "N/A";
+  }
+})();
+</script>
