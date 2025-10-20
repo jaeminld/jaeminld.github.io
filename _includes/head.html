@@ -4,15 +4,30 @@
 
   <script>
     MathJax = {
-      loader: { load: ['[tex]/color', '[tex]/ams'] },   // color + ams 로드
+      loader: { load: ['[tex]/color', '[tex]/ams'] },
       tex: {
-        packages: { '[+]': ['color', 'ams'] },          // color, ams 활성화
+        packages: { '[+]': ['color', 'ams'] },
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         displayMath: [['$$', '$$'], ['\\[', '\\]']],
         processEscapes: true,
-        tags: 'ams',           // 자동 넘버링
-        tagSide: 'right',      // 번호를 오른쪽에
-        tagIndent: '0.8em'     // 본문과 간격
+
+        tags: 'ams',
+        tagSide: 'right',
+        tagIndent: '0.8em',
+
+        macros: {
+          /* 번호 없는 디스플레이 수식(카운트 X) */
+          eq: ['\\[\\displaystyle #1\\]', 1],
+
+          /* 번호 있는 디스플레이 수식(카운트 O) — equation 환경 래핑 */
+          eqnum: ['\\begin{equation}\\displaystyle #1\\end{equation}', 1],
+
+          /* 현재 수식에 임의 태그(번호 텍스트) 지정 */
+          eqtag: ['\\tag{#1}', 1],
+
+          /* 현재 수식의 번호 숨김(카운트 제외) */
+          eqnotag: ['\\notag']
+        }
       },
       svg: { fontCache: 'global' }
     };

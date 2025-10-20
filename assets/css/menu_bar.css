@@ -9,18 +9,22 @@
 }
 
 .menu-bar ul {
-list-style-type: none;
-margin: 0;
-padding: 0;
-display: flex;
-justify-content: space-around; /* Align items horizontally */
+    list-style-type: none;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: 12px;  
+    display: flex;
+    justify-content: space-around; /* Align items horizontally */
 }
 
 .menu-bar li {
   display: flex;               
   align-items: center;
-  flex: 1 1 clamp(140px, 18vw, 260px);
+  flex: 1 1 clamp(120px, 16vw, 240px);
+  min-width: clamp(120px, 16vw, 240px); 
 }
+
 .menu-bar a {
   display: block;               
   width: 100%;                
@@ -31,7 +35,7 @@ justify-content: space-around; /* Align items horizontally */
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
-  border-radius: 6px;            /* 선택사항: 버튼 감성 */
+  border-radius: 6px;      
   transition: background-color 0.2s ease;
   letter-spacing: 0.04em;
 }

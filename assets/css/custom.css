@@ -13,3 +13,8 @@
   border-left-color: #28a745;
   background: #e6f9ec;
 }
+
+.math-center {
+  text-align: center;
+  margin: 1em 0;
+}

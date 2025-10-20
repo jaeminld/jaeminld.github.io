@@ -1531,6 +1531,7 @@ a.newer-posts:hover {
   display:flex; flex-wrap:wrap; gap:14px;
   align-items:center;
   border-bottom:1px solid #e5e7eb;
+  margin: 6px 0 clamp(16px, 0.2vw, 28px);
   padding:0 2px 8px 2px;
 }
 .cat-tab{
