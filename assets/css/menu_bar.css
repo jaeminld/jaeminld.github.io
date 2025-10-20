@@ -7,6 +7,7 @@
     width: 100%; /* Ensure it spans the full width of the container */
     box-sizing: border-box; /* Make sure padding doesn't increase total width */
 }
+
 .menu-bar ul {
 list-style-type: none;
 margin: 0;
@@ -14,23 +15,62 @@ padding: 0;
 display: flex;
 justify-content: space-around; /* Align items horizontally */
 }
+
 .menu-bar li {
-display: inline;
+  display: flex;               
+  align-items: center;
+  flex: 1 1 clamp(140px, 18vw, 260px);
 }
 .menu-bar a {
-color: #fff; /* Text color */
-text-decoration: none;
-padding: 8px 16px;
-font-weight: bold;
-}
-.menu-bar a:hover {
-background-color: #555; /* Background color on hover */
+  display: block;               
+  width: 100%;                
+  height: 100%;
+  padding: 6px 16px;        
+  text-align: center;        
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 6px;            /* 선택사항: 버튼 감성 */
+  transition: background-color 0.2s ease;
+  letter-spacing: 0.04em;
 }
 
+.menu-bar a:hover {
+  background-color: #555;      
+}
 
 .menu-wrapper {
 margin-left: 250px;
 width: calc(100% - 250px); 
 padding: 0px; 
 box-sizing: border-box;
+}
+
+/* ✅ 모바일/태블릿에서만 사이드바 여백 제거 + 가로 스크롤 옵션 */
+@media (max-width: 1024px) {
+  .menu-wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* 메뉴가 넘치면 한 줄 가로 스크롤 (데스크톱 규칙 유지) */
+  .menu-bar ul {
+    justify-content: center;
+    flex-wrap: wrap;                
+    gap: clamp(14px, 3vw, 16px);      
+    row-gap: clamp(4px, 1.2vw, 12px); 
+    -webkit-overflow-scrolling: touch;
+    flex: 1 1 clamp(40px, 42%, 100px);
+  }
+
+  .menu-bar a {
+    /* 🔁 상하/좌우 패딩을 뷰포트 기준으로 유연하게 */
+    padding: clamp(10px, 2vw, 6px) clamp(16px, 3.5vw, 16px);
+    font-size: clamp(1.0rem, 1.8vw, 1.2rem); /* 화면 작으면 살짝 축소 */
+  }
+}
+
+.menu-bar li:not(:last-child) {
+  margin-right: 6px; /* 버튼 사이 아주 약간 여백 */
 }
