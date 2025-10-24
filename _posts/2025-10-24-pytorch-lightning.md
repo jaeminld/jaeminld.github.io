@@ -2,7 +2,7 @@
 layout: post
 title: "pytorch-lightning Basic review"
 slug: pytorch-lightning 
-date: 2025-10-24 14:32:20 +0300
+date: 2025-10-24 10:32:20 +0300
 description: cVAE Description
 img: ./pytorch-lightning/fig.svg   # Add image post (optional)
 fig-caption: # Add figcaption (optional)
