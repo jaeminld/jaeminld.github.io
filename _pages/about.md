@@ -7,7 +7,7 @@ permalink: /about/
 <section class="about-hero">
   <h2>Overview</h2>
   <p class="about-lead">
-저는 컴퓨터 비전과 추천 시스템에 관심이 있고, 현재 머신러닝 기반 모델을 연구하고 있습니다.<br>
+저는 컴퓨터 비전과 추천 시스템에 관심이 있고, 현재 관련 딥러닝 모델을 공부하고 있습니다.<br>
 모델 구현과 실험, 실제 서비스 적용에 관심이 있습니다.
   </p>
 </section>
