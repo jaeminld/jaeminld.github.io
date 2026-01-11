@@ -131,7 +131,7 @@ layout: default
 </div>
 
 <!-- Main content -->
-<div class="content-box clearfix {% if page.layout == 'post' %}is-post{% endif %}">
+<div class="content-box clearfix {% if page.layout == 'post' %}is-post{% endif %}{% if page.layout == 'page' %} is-page{% endif %}">
   {{ content }}
 </div>
 
