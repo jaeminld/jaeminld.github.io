@@ -7,8 +7,9 @@ permalink: /about/
 <section class="about-hero">
   <h2>Overview</h2>
   <p class="about-lead">
-저는 컴퓨터 비전과 추천 시스템을 중심으로 딥러닝 모델을 공부하고 있습니다.<br>
-모델 구현과 이론, 실제 서비스 적용에 관심이 있습니다. </p>
+저는 컴퓨터 비전과 추천 시스템에 관심이 있고, 현재 머신러닝 기반 모델을 연구하고 있습니다.<br>
+모델 구현과 실험, 실제 서비스 적용에 관심이 있습니다.
+  </p>
 </section>
 
 <section class="about-section">
@@ -99,25 +100,38 @@ permalink: /about/
   </div>
 </section>
 
-<!-- <section class="about-section">
-  <h2>Projects</h2>
+<section class="about-section">
+  <h2>Awards</h2>
   <div class="about-card">
     <div class="about-row">
-      <div class="about-title">[Project Name]</div>
-      <div class="about-meta">[Year]</div>
+      <div class="about-title">토스 NEXT ML CHALLENGE : 광고 클릭 예측(CTR) 모델 개발 - 12/709</div>
+      <div class="about-meta">2025</div>
     </div>
-    <div class="about-sub">one-line summary.</div>
+    <div class="about-sub">Toss/Dacon</div>
+    <div class="about-sub">ML 모델을 활용한 CTR 예측</div>
     <div class="about-links">
-      <a href="#">Link</a>
+      <a href="https://dacon.io/competitions/official/236575/overview/description">Page</a>
+      <a href="https://github.com/jaeminld/Toss_DOGICOIN">Code</a>
     </div>
   </div>
-</section> -->
+  <div class="about-card">
+    <div class="about-row">
+      <div class="about-title">난임 환자 대상 임신 성공 여부 예측 AI 온라인 해커톤 - 3/794</div>
+      <div class="about-meta">2025</div>
+    </div>
+    <div class="about-sub">LG Aimers/Dacon</div>
+    <div class="about-sub">ML 모델을 활용한 임신 성공 여부 예측</div>
+    <div class="about-links">
+      <a href="https://dacon.io/competitions/official/236452/overview/description">Page</a>
+    </div>
+  </div>
+</section>
 
 <section class="about-section">
   <h2>Contact</h2>
   <div class="about-links">
     <a href="mailto:jaeminld19@gmail.com">jaeminld19@gmail.com</a>
     <a href="https://github.com/jaeminld">GitHub</a>
-    <a href="https://linkedin.com/in/재민-최-3b6aa3398/">LinkedIn</a>
+    <a href="https://linkedin.com/in/">LinkedIn</a>
   </div>
 </section>
