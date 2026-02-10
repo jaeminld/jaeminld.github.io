@@ -75,21 +75,14 @@ permalink: /about/
 <section class="about-section">
   <h2>Papers</h2>
   <div class="about-card">
-    <div class="about-title">MagID: Enhancing the Functionality of Off-the-Shelf Smartphones Through Magnetic Accessory Identification</div>
-    <div class="about-sub"><strong>Jaemin Choi</strong>, Insu Kim, Hyosu Kim</div>
-    <div class="about-sub">IEEE Access, 2024</div>
+    <div class="about-title">LiveWeb-IE: A Benchmark For Online Web Information Extraction</div>
+    <div class="about-sub">Seungbin Yang<sup>*</sup>, Jihwan Kim<sup>*</sup>, <strong>Jaemin Choi</strong>, Dongjin Kim, Soyoung Yang, ChaeHun Park, Jaegul Choo</div>
+    <div class="about-sub">ICLR, 2026</div>
     <div class="about-links">
-      <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10706786">PDF</a>
+      <a href="https://iclr.cc/virtual/2026/poster/10008625">PDF</a>
     </div>
   </div>
-  <div class="about-card">
-    <div class="about-title">MagPie: Extending a Smartphone's Interaction Space via a Customizable Magnetic Back-of-Device Input Accessory</div>
-    <div class="about-sub">Insu Kim, Suhyeon Shin, <strong>Jaemin Choi</strong>, Junseob Kim, Junhyub Lee, Sangeun Oh, Eunji Park, Hyosu Kim</div>
-    <div class="about-sub">SIGCHI, 2025</div>
-    <div class="about-links">
-      <a href="https://programs.sigchi.org/chi/2025/program/content/189569">PDF</a>
-    </div>
-  </div>
+
   <div class="about-card">
     <div class="about-title">PoBiTag: Toward Unobtrusive and Customizable Tag-Based Interaction With Optical Polarization and Birefringence</div>
     <div class="about-sub">Seohyeon Park, Seunghun Chae, <strong>Jaemin Choi</strong>, Hyosu Kim</div>
@@ -98,13 +91,31 @@ permalink: /about/
       <a href="https://ieeexplore.ieee.org/abstract/document/11153441">PDF</a>
     </div>
   </div>
+
+   <div class="about-card">
+    <div class="about-title">MagPie: Extending a Smartphone's Interaction Space via a Customizable Magnetic Back-of-Device Input Accessory</div>
+    <div class="about-sub">Insu Kim, Suhyeon Shin, <strong>Jaemin Choi</strong>, Junseob Kim, Junhyub Lee, Sangeun Oh, Eunji Park, Hyosu Kim</div>
+    <div class="about-sub">SIGCHI, 2025</div>
+    <div class="about-links">
+      <a href="https://programs.sigchi.org/chi/2025/program/content/189569">PDF</a>
+    </div>
+  </div>
+
+  <div class="about-card">
+    <div class="about-title">MagID: Enhancing the Functionality of Off-the-Shelf Smartphones Through Magnetic Accessory Identification</div>
+    <div class="about-sub"><strong>Jaemin Choi</strong>, Insu Kim, Hyosu Kim</div>
+    <div class="about-sub">IEEE Access, 2024</div>
+    <div class="about-links">
+      <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10706786">PDF</a>
+    </div>
+  </div>
 </section>
 
 <section class="about-section">
   <h2>Awards</h2>
   <div class="about-card">
     <div class="about-row">
-      <div class="about-title">토스 NEXT ML CHALLENGE : 광고 클릭 예측(CTR) 모델 개발 - 12/709</div>
+      <div class="about-title">토스 NEXT ML CHALLENGE : 광고 클릭 예측(CTR) 모델 개발 - Rank 12/709</div>
       <div class="about-meta">2025</div>
     </div>
     <div class="about-sub">Toss/Dacon</div>
@@ -116,7 +127,7 @@ permalink: /about/
   </div>
   <div class="about-card">
     <div class="about-row">
-      <div class="about-title">난임 환자 대상 임신 성공 여부 예측 AI 온라인 해커톤 - 3/794</div>
+      <div class="about-title">난임 환자 대상 임신 성공 여부 예측 AI 온라인 해커톤 - Rank 3/794</div>
       <div class="about-meta">2025</div>
     </div>
     <div class="about-sub">LG Aimers/Dacon</div>
