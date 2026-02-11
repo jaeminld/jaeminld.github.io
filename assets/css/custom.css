@@ -89,6 +89,53 @@ pre code {
   gap: 16px;
 }
 
+/* Categories page: force single column */
+.page--categories #post-list {
+  grid-template-columns: 1fr;
+}
+
+/* Categories page: prevent flex container shrink-to-fit */
+.page--categories {
+  width: 100%;
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+/* Categories page: normalize card height and text length */
+.page--categories #post-list .post {
+  height: 180px;
+  min-height: 180px;
+  width: 100%;
+}
+
+.page--categories #post-list .post .post-thumbnail {
+  min-height: 180px;
+  width: 30%;
+  flex: 0 0 30%;
+}
+
+.page--categories #post-list .post .post-content {
+  overflow: hidden;
+  width: auto;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.page--categories #post-list .post .post-content .post-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.page--categories #post-list .post .post-content p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
 #post-list .post,
 #post-list .post-card {
   min-width: 0;
@@ -303,6 +350,14 @@ article h2 a {
 
 body {
   font-family: "Noto Sans KR", "Lato", sans-serif;
+}
+
+ a {
+  color: #2f4b7c;
+}
+
+a:hover {
+  color: #23385f;
 }
 
 h1, h2, h3, h4, h5, h6,
